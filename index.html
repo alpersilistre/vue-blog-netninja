@@ -16,11 +16,14 @@
     <a v-bind:href="website">Alper Silistre Website</a>
     <input type="text" v-bind:value="name">
     <p v-html="websiteTag"></p>
-    <button @click="age++">Add a year</button>
+    <button @click.once="age++">Add a year</button>
     <button v-on:click="subtract">Subtract a year</button>
     <button @dblclick="addTen">Add 10 year</button>
     <p>My age is {{ age }}</p>
     <div v-on:mousemove="updateXY" id="canvas">{{ x }}, {{ y }}</div>
+    <a @click.prevent="click" href="https://www.alpersilistre.com">Alper Silistre</a>
+    <input type="text" v-on:keyup.enter="logName">
+    <input type="text" v-on:keyup.alt.enter="logAge">
   </div>
   <script src="app.js"></script>
 </body>
